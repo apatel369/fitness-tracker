@@ -20,8 +20,13 @@ export class SidenavListComponent implements OnInit {
     });
   }
 
-   onClose(){
+  onClose(){
     this.closeSidenav.emit();
+  }
+
+  onLogout() {
+    this.onClose();
+    this.authService.logout();
   }
 
   ngOnDestroy() {
