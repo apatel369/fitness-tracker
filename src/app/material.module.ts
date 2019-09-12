@@ -16,8 +16,10 @@ import {
         MatProgressSpinnerModule,
         MatDialogModule,
         MatTableModule,
-        MatSortModule
+        MatSortModule,
+        MatPaginatorModule
  } from '@angular/material';
+import { MatPaginatedTabHeader } from '@angular/material/tabs/typings/paginated-tab-header';
 
 @NgModule({
   imports: [
@@ -37,7 +39,8 @@ import {
     MatProgressSpinnerModule,
     MatDialogModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule
   ],
   exports: [
     MatButtonModule,
@@ -56,7 +59,8 @@ import {
     MatProgressSpinnerModule,
     MatDialogModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatPaginatorModule
   ]
 
 })
