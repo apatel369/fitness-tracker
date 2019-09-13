@@ -19,8 +19,8 @@ export class NewTrainingComponent implements OnInit {
   constructor(private trainingService: TrainingService, private db: AngularFirestore) { }
 
   ngOnInit() {
-    this.exercises = this.db.
-    collection('availableExercises')
+    this.exercises = this.db
+    .collection('availableExercises')
     .snapshotChanges()
     .pipe(
       map(docArray => {
