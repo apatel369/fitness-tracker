@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AuthService {
   authChange = new Subject<boolean>();
-  private user: User;
+  private isAuthenticated = false;
 
   constructor(private router: Router, private afAuth: AngularFireAuth) {
 
@@ -38,20 +38,17 @@ export class AuthService {
   }
 
   logout() {
-    this.user = null;
+    this.isAuthenticated = false;
     this.authChange.next(false);
     this.router.navigate(['/login']);
   }
 
-  getUser() {
-    return { ...this.user };
-  }
-
   isAuth() {
-    return this.user != null;
+    return this.isAuthenticated;
   }
 
   private authSuccessfully () {
+    this.isAuthenticated = true;
     this.authChange.next(true);
     this.router.navigate(['/training']);
   }
