@@ -23,7 +23,7 @@ export class PastTrainingComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit() {
     this.exChangedSubscription = this.trainingService.finishedExercisesChanged.subscribe(
       (exercises: Exercise[]) => {
-        this.dataSource.data = exercises
+        this.dataSource.data = exercises;
       }
     );
     this.trainingService.fetchCompleletedOrCancelledExercises();
