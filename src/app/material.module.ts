@@ -17,7 +17,8 @@ import {
         MatDialogModule,
         MatTableModule,
         MatSortModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatSnackBarModule
  } from '@angular/material';
 import { MatPaginatedTabHeader } from '@angular/material/tabs/typings/paginated-tab-header';
 
@@ -40,7 +41,8 @@ import { MatPaginatedTabHeader } from '@angular/material/tabs/typings/paginated-
     MatDialogModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSnackBarModule
   ],
   exports: [
     MatButtonModule,
@@ -60,7 +62,8 @@ import { MatPaginatedTabHeader } from '@angular/material/tabs/typings/paginated-
     MatDialogModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSnackBarModule
   ]
 
 })

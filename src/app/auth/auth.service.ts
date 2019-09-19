@@ -6,13 +6,14 @@ import { AuthData } from './auth-data.model';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { TrainingService } from '../training/training.service';
+import { MatSnackBar } from '@angular/material';
 
 @Injectable()
 export class AuthService {
   authChange = new Subject<boolean>();
   private isAuthenticated = false;
 
-  constructor(private router: Router, private afAuth: AngularFireAuth, private trainingService: TrainingService) {
+  constructor(private router: Router, private afAuth: AngularFireAuth, private trainingService: TrainingService, private snackBar: MatSnackBar) {
 
   }
 
@@ -37,7 +38,9 @@ export class AuthService {
       console.log(result);
     })
     .catch(err => {
-      console.log(err);
+      this.snackBar.open(err.message, null, {
+        duration: 3000
+      });
     });
   }
 
@@ -47,7 +50,9 @@ export class AuthService {
       console.log(result);
     })
     .catch(err => {
-      console.log(err);
+      this.snackBar.open(err.message, null, {
+        duration: 3000
+      });
     });
   }
 
