@@ -20,9 +20,6 @@ import { TrainingService } from './training/training.service';
 import { environment } from 'src/environments/environment';
 import { UIService } from './shared/ui.service';
 import { AuthModule } from './auth/auth.module,';
-import { TrainingModule } from './training/training.module';
-
-
 
 @NgModule({
   declarations: [
@@ -38,10 +35,10 @@ import { TrainingModule } from './training/training.module';
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
-    TrainingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AuthModule
+    AuthModule,
+    AngularFirestoreModule
   ],
   providers: [AuthService, TrainingService, UIService],
   bootstrap: [AppComponent],
